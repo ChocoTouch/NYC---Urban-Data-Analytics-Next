@@ -36,8 +36,7 @@ Ce projet est une application d'analyse de données urbaines pour la ville de Ne
 3. Configurez les variables d'environnement dans un fichier .env. Exemple de base :
 
    ```.env
-   DATABASE_URL="your-database-url"
-   NEXT_PUBLIC_API_URL="your-api-url"
+   DATABASE_URL="postgresql://janedoe:mypassword@localhost:5432/mydb"
    ```
 
 3. Pour migrez votre base de données avec prisma :
@@ -51,7 +50,7 @@ Ce projet est une application d'analyse de données urbaines pour la ville de Ne
    ```.bash
    npm run dev
    ```
-   
+
 ### Technologies utilisées
 
 - **Next.js** : Framework React
