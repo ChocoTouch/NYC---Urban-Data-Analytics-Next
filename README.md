@@ -74,10 +74,6 @@ npm run dev
 
 ```
 
-### Technologies utilisées
-
-- **Next.js** : Framework React
-
 ## Dockerisation
 
 Le projet est entièrement configuré pour fonctionner dans un environnement Docker. Suivez ces étapes pour lancer l'application avec Docker.
@@ -110,6 +106,27 @@ Le projet est entièrement configuré pour fonctionner dans un environnement Doc
    ```
 
 6. Accédez à l'application sur [http://localhost:3000](http://localhost:3000).
+
+## Routes disponibles
+
+### **Frontend**
+
+-   `/`: Accès à l'interface principale pour visualiser les cartes des crimes et des stations de vélos.
+
+### **Backend**
+
+-   **`/api/metrics`**: Retourne des métriques pour Prometheus afin de surveiller l'application.
+-   **`/api/crimes`**: Endpoint permettant d’accéder aux données des crimes. Vous pouvez utiliser des paramètres pour filtrer les résultats par date, type de crime, ou localisation.
+-   **`/api/stations`**: Fournit des données en temps réel sur les stations de vélos libres, incluant la disponibilité actuelle.
+
+## Technologies utilisées
+
+-   **Next.js** : Framework React.
+-   **Prisma** : ORM pour la gestion des bases de données.
+-   **PostgreSQL** : Base de données relationnelle.
+-   **Redis** : Cache pour des performances optimales.
+-   **Docker** : Conteneurisation pour un environnement de développement reproductible.
+-   **Prometheus & Grafana** : Surveillance et visualisation des métriques.
 
 ### Services Docker
 
