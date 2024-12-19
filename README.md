@@ -51,29 +51,7 @@ Ce projet est une application d'analyse de données urbaines pour la ville de Ne
    ```.bash
    npm run dev
    ```
-
-### Structure du projet
-
-Voici un aperçu de la structure des répertoires du projet :
-
-```bash
-    /nyc-urban-data-analytics-next
-    |-- /pages
-    |   |-- index.js       # Page d'accueil
-    |   |-- /api           # Endpoints API
-    |-- /components
-    |   |-- CrimeMap.js    # Composant de la carte des crimes
-    |   |-- BikeStation.js # Composant des stations de vélos
-    |-- /prisma
-    |   |-- schema.prisma  # Schéma de la base de données
-    |-- /public
-    |   |-- /images        # Images statiques
-    |-- /styles
-    |   |-- globals.css    # Styles globaux
-    |-- /lib
-    |   |-- prisma.js      # Configuration Prisma
-```
-
+   
 ### Technologies utilisées
 
 - **Next.js** : Framework React
