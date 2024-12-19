@@ -1,0 +1,73 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres
+    container_name: nyc_pgdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: nyc-urban-data
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: 1234
+    volumes:
+      - local_pgdata:/var/lib/postgresql/data
+    networks:
+      - dev
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: nyc-pgadmin4
+    restart: always
+    ports:
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: 1234
+    volumes:
+      - pgadmin-data:/var/lib/pgadmin
+    networks:
+      - dev
+
+  prometheus:
+    image: prom/prometheus:v2.43.0
+    container_name: prometheus
+    restart: always
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      - dev
+
+  grafana:
+    image: grafana/grafana:8.5.4
+    container_name: grafana
+    restart: always
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    volumes:
+      - grafana-data:/var/lib/grafana
+    networks:
+      - dev
+    depends_on:
+      - prometheus
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"  # Redis par défaut utilise le port 6379
+    networks:
+      - dev
+volumes:
+  local_pgdata:
+  pgadmin-data:
+  grafana-data:
+
+networks:
+  dev:

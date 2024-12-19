@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Crime {
+  id                  Int       @id @default(autoincrement())
+  precinctCode        Int?
+  boroughName         String?
+  incidentDate        DateTime?
+  incidentTime        String?
+  incidentEndDate     DateTime?
+  incidentEndTime     String?
+  incidentStatus      String?
+  jurisdictionCode    Int?
+  offenseLevel        String?
+  offenseDescription  String?
+  patrolBoroughName   String?
+  premisesType        String?
+  reportDate          DateTime?
+  xCoord              Float?
+  yCoord              Float?
+  latitude            Float?
+  longitude           Float?
+  latitudeLongitude   String?
+  newGeoreferencedColumn String?
+}
+
+model Station {
+  id          String  @id
+  name        String
+  latitude    Float
+  longitude   Float
+  freeBikes   Int
+  emptySlots  Int
+}

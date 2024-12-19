@@ -39,3 +39,22 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Environment Variables
+.env
+
+# Next.js build output
+.next/
+
+# Prisma files
+prisma/migrations/
+
+# OS files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Docker files
+# .dockerignore
+# docker-compose.yml
