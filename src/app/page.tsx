@@ -16,7 +16,7 @@ export default function Home() {
 
     const fetchCrimes = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/crimes");
+        const response = await fetch("/api/crimes");
         const data = await response.json();
         setCrimes(data); 
       } catch (error) {
@@ -28,7 +28,7 @@ export default function Home() {
 
     const fetchStations = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/stations");
+        const response = await fetch("/api/stations");
         const data = await response.json();
         setStations(data); 
       } catch (error) {

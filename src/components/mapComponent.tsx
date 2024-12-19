@@ -254,7 +254,7 @@ const MapComponent = ({ crimes, stations }: MapComponentProps) => {
               onClick={handleToggleCrimes}
               className="bg-blue-500 text-white p-2 rounded-lg mb-4 w-full"
             >
-              Apply filter
+              Afficher Crimes
             </button>
 
             <div className="w-full">

@@ -1,9 +1,7 @@
-version: "3.9"
-
 services:
   db:
     image: postgres
-    container_name: nyc_pgdb
+    container_name: db
     restart: always
     ports:
       - "5432:5432"
@@ -16,19 +14,19 @@ services:
     networks:
       - dev
 
-  pgadmin:
-    image: dpage/pgadmin4
-    container_name: nyc-pgadmin4
-    restart: always
-    ports:
-      - "8888:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@admin.com
-      PGADMIN_DEFAULT_PASSWORD: 1234
-    volumes:
-      - pgadmin-data:/var/lib/pgadmin
-    networks:
-      - dev
+  # pgadmin:
+  #   image: dpage/pgadmin4
+  #   container_name: nyc-pgadmin4
+  #   restart: always
+  #   ports:
+  #     - "8888:80"
+  #   environment:
+  #     PGADMIN_DEFAULT_EMAIL: admin@admin.com
+  #     PGADMIN_DEFAULT_PASSWORD: 1234
+  #   volumes:
+  #     - pgadmin-data:/var/lib/pgadmin
+  #   networks:
+  #     - dev
 
   prometheus:
     image: prom/prometheus:v2.43.0
@@ -64,6 +62,20 @@ services:
       - "6379:6379"  # Redis par défaut utilise le port 6379
     networks:
       - dev
+
+  nextjs-app:
+    build: .
+    container_name: nextjs-app
+    restart: always
+    ports:
+      - "3000:3000"
+    networks:
+      - dev
+    depends_on:
+      - db
+      - redis
+      - prometheus
+
 volumes:
   local_pgdata:
   pgadmin-data:
