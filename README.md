@@ -58,20 +58,20 @@ Voici un aperçu de la structure des répertoires du projet :
 
 ```bash
     /nyc-urban-data-analytics-next
-|-- /pages
-|   |-- index.js       # Page d'accueil
-|   |-- /api           # Endpoints API
-|-- /components
-|   |-- CrimeMap.js    # Composant de la carte des crimes
-|   |-- BikeStation.js # Composant des stations de vélos
-|-- /prisma
-|   |-- schema.prisma  # Schéma de la base de données
-|-- /public
-|   |-- /images        # Images statiques
-|-- /styles
-|   |-- globals.css    # Styles globaux
-|-- /lib
-|   |-- prisma.js      # Configuration Prisma
+    |-- /pages
+    |   |-- index.js       # Page d'accueil
+    |   |-- /api           # Endpoints API
+    |-- /components
+    |   |-- CrimeMap.js    # Composant de la carte des crimes
+    |   |-- BikeStation.js # Composant des stations de vélos
+    |-- /prisma
+    |   |-- schema.prisma  # Schéma de la base de données
+    |-- /public
+    |   |-- /images        # Images statiques
+    |-- /styles
+    |   |-- globals.css    # Styles globaux
+    |-- /lib
+    |   |-- prisma.js      # Configuration Prisma
 ```
 
 ### Technologies utilisées
@@ -93,3 +93,34 @@ Si vous souhaitez utiliser Docker pour le développement, vous pouvez utiliser l
    ```.bash
    docker-compose up
    ```
+
+### Structure du projet
+
+Voici la structure des fichiers de ce projet :
+
+   ```.ruby
+   NYC-URBAN-DATA-ANALYTICS-NEXT/
+    │
+    ├── .next/                  # Dossier de build Next.js
+    ├── data/                   # Données CSV des crimes
+    ├── prisma/                 # Prisma setup (Schémas, migrations)
+    ├── public/                 # Assets publics (images, icônes)
+    ├── src/                    # Code source de l'application
+    │   ├── api/                # API (endpoints)
+    │   ├── components/         # Composants React
+    │   ├── pages/              # Pages Next.js
+    │   └── styles/             # Fichiers de styles
+    ├── .env                    # Variables d'environnement
+    ├── docker-compose.yml      # Docker Compose pour l'environnement de développement
+    ├── next.config.js          # Configuration de Next.js
+    ├── package.json            # Dépendances et scripts du projet
+    └── README.md               # Ce fichier
+   ```
+
+### Structure du projet
+
+1. Accédez à la carte des crimes et stations de vélos à travers l'interface.
+
+2. Utilisez les filtres pour explorer les données par date, type de crime, ou quartier.
+
+3. Visualisez les statistiques sur le tableau de bord.
