@@ -2,8 +2,8 @@ import Redis from 'ioredis';
 
 const redis = new Redis({
   host: 'localhost', 
-  port: 6379, 
-  password: 'your_redis_password', 
+  port: Number(process.env.REDIS_PORT) || 6379, 
+  password: process.env.REDIS_PASSWORD || 'your_redis_password', 
   db: 0,
 });
 

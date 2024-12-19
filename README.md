@@ -37,6 +37,9 @@ Ce projet est une application d'analyse de données urbaines pour la ville de Ne
 
    ```.env
    DATABASE_URL="postgresql://janedoe:mypassword@localhost:5432/mydb"
+   REDIS_HOST=localhost
+   REDIS_PORT=6379
+   REDIS_PASSWORD=your_redis_password
    ```
 
 3. Pour migrez votre base de données avec prisma :
