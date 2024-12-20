@@ -47,23 +47,17 @@ npm install
 3. Configurez les variables d'environnement dans un fichier .env. Exemple de base :
 
 ```.env
-
 DATABASE_URL="postgresql://janedoe:mypassword@localhost:5432/mydb"
-
 REDIS_HOST=localhost
-
 REDIS_PORT=6379
-
 REDIS_PASSWORD=your_redis_password
-
 ```
 
 3. Pour migrez votre base de données avec prisma :
 
 ```.bash
-
+npx prisma generate
 npx prisma migrate dev
-
 ```
 
 4. Démarrez l'application en mode développement :
